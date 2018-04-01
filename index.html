@@ -1,0 +1,26 @@
+<!--<script src="cm/lib/codemirror.js"></script>
+<link rel="stylesheet" href="cm/lib/codemirror.css">
+<script src="cm/mode/htmlmixed/htmlmixed.js"></script>
+<script src="cm/mode/markdown/markdown.js"></script>-->
+
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="width=device-width, initial-scale=1" name="viewport" /><script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js" integrity="sha256-dwhppIrxD8qC6lNulndZgtIm4XBU9zoMd9OUoXzIDAE=" crossorigin="anonymous"></script>
+
+<body onload="return undefined;">
+<script>
+var a;
+var b;
+var html;
+var converter = new showdown.Converter();
+function run(){
+var text = document.getElementById('sourceTA').value;
+html = converter.makeHtml(text);
+document.getElementById('code').value=html}
+</script>
+<h1>Markdown2HTML</h1>
+<textarea id="sourceTA" onkeydown="return run()" rows="10" cols="88"></textarea><hr /><button onclick="return run()">Run</button><hr />
+<textarea id="code" rows="10" cols="88"></textarea><hr /><button
+onclick="if(html){window.open('form.html?result='+html.replace(/=/gi,'w3equalsign')
+.replace(/script/gi,'w3scrw3ipttag'));}else{alert('error')}">Preview</button></body><style>#sourceTA #code{
+    /*display: block;*/
+}
+</style>
